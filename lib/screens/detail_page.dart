@@ -15,15 +15,28 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(elemento.titulo),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.network(elemento.imagen),
+            Image.network(
+              elemento.imagen,
+              height: 250,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              elemento.titulo,
+              style: const TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             const SizedBox(height: 20),
             Text(
               elemento.descripcion,
-              style: const TextStyle(fontSize: 20),
+              textAlign: TextAlign.justify,
+              style: const TextStyle(fontSize: 18),
             ),
           ],
         ),
